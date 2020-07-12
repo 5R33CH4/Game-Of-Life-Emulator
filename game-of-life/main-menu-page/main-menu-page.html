@@ -1,0 +1,84 @@
+<!-- Imports Polymer -->
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<!-- Imports Dependencies -->
+<link rel="import" href="../../bower_components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+
+<link rel="import" href="../shared/game-field/game-field.html">
+
+<link rel="import" href="language-selection/language-selection.html">
+
+
+<!-- Defines element markup -->
+<dom-module id="main-menu-page">
+
+  <template>
+    <custom-style>
+      <style>
+
+      :host
+      {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+
+      game-field
+      {
+        margin: auto;
+        width: 200px;
+      }
+
+      .gamefield-container
+      {
+        margin: auto;
+        padding: 15px;
+      }
+
+      paper-button
+      {
+        width: 250px;
+        font-family: 'Gloria Hallelujah', cursive;
+      }
+
+      .buttons-container
+      {
+        padding: 15px;
+      }
+
+      language-selection
+      {
+        margin: 15px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+      }
+
+      </style>
+    </custom-style>
+
+    <div class="gamefield-container">
+      <game-field cell-color="[[cellColor]]" roughness="[[roughness]]" json-file-path="game-of-life/main-menu-page/clock.json"></game-field>
+    </div>
+
+    <div class="buttons-container">
+      <paper-button id="button-sandbox-mode" raised>[[localize("sandbox mode")]]</paper-button>
+      <br><br>
+      <paper-button id="button-tutorial" raised>[[localize("tutorial")]]</paper-button>
+      <br><br>
+      <paper-button id="button-settings" raised>[[localize("settings")]]</paper-button>
+    </div>
+
+    <br><br>
+
+    <!--
+      language selection was removed, because it doesn't fit in current design
+      <language-selection language="{{language}}"></language-selection>
+    -->
+
+  </template>
+
+  <!-- Loads JavaScript -->
+  <script src="main-menu-page.js"></script>
+</dom-module>

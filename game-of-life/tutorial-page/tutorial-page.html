@@ -1,0 +1,113 @@
+<!-- Imports Polymer -->
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<!-- Imports Dependencies -->
+<link rel="import" href="../../bower_components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+
+<link rel="import" href="../shared/game-field/game-field.html">
+<link rel="import" href="../shared/rule-editor/rule-editor.html">
+
+<!-- Defines element markup -->
+<dom-module id="tutorial-page">
+
+  <template>
+    <style>
+
+    :host
+    {
+      display: block;
+    }
+
+    .section
+    {
+      margin: 35px;
+    }
+
+    .container
+    {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    paper-card
+    {
+      padding: 25px;
+      font-family: 'Gloria Hallelujah', cursive;
+    }
+
+    .item
+    {
+      flex: 1;
+      text-align: center;
+    }
+
+    game-field
+    {
+      margin: auto;
+    }
+
+    </style>
+
+    <!-- <iron-pages selected="0"> -->
+      <div class="section">
+        <paper-card heading='[[localize("welcome to the game of life")]]'>
+          [[localize("chapter_1_1")]]
+          <br><br>
+          [[localize("chapter_1_2")]]
+          <b>[[localize("dead")]]</b>
+          [[localize("or")]]
+          <b>[[localize("living")]]</b>.
+          <div class="container">
+            <div class="item">
+              <game-field cell-color="[[cellColor]]" roughness="[[roughness]]" cell-states-data='[1]' columns="1" rows="1"></game-field>
+              [[localize("living")]]
+            </div>
+            <div class="item">
+              <game-field cell-color="[[cellColor]]" roughness="[[roughness]]" cell-states-data='[0]' columns="1" rows="1"></game-field>
+              [[localize("dead")]]
+            </div>
+          </div>
+        </paper-card>
+      </div>
+
+      <div class="section">
+        <paper-card heading='[[localize("the neighbourhood")]]'>
+          [[localize("chapter_2_1")]]
+          <br><br>
+          [[localize("chapter_2_2")]]
+          <br><br>
+          <div class="container">
+            <div class="item">
+              <game-field cell-color="[[cellColor]]" roughness="[[roughness]]" json-file-path="game-of-life/tutorial-page/r-pentomino_1.json"></game-field>
+              [[localize("iteration")]] t
+            </div>
+            <div class="item">
+              <game-field cell-color="[[cellColor]]" roughness="[[roughness]]" json-file-path="game-of-life/tutorial-page/r-pentomino_2.json"></game-field>
+              [[localize("iteration")]] t + 1
+            </div>
+          </div>
+        </paper-card>
+      </div>
+
+      <div class="section">
+        <paper-card heading='[[localize("lets go")]]'>
+          [[localize("chapter_3_1")]]
+          <b>[[localize("settings")]]</b>
+          [[localize("chapter_3_2")]]
+          <b>[[localize("sandbox mode")]]</b>
+          [[localize("chapter_3_3")]]
+          <br><br>
+          [[localize("chapter_3_4")]]
+          <br><br>
+          <rule-editor editable></rule-editor>
+        </paper-card>
+      </div>
+    <!-- </iron-pages> -->
+  </template>
+
+  <!-- Loads JavaScript -->
+  <script src="tutorial-page.js"></script>
+</dom-module>

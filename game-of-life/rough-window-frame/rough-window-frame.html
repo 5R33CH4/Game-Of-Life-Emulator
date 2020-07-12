@@ -1,0 +1,111 @@
+<!-- Imports Polymer -->
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<!-- Imports Dependencies -->
+<link rel="import" href="../shared/rough-line-icon/rough-line-icon.html">
+
+<!-- Defines element markup -->
+<dom-module id="rough-window-frame">
+
+  <template>
+    <custom-style>
+      <style>
+
+      :host
+      {
+        display: block;
+        -webkit-user-select: none;
+      }
+
+      .fixed
+      {
+        display: block;
+        position: fixed;
+        top: 0;
+        width: calc(100% - 10px);
+        height: 30px;
+        margin: 0;
+        padding: 5px;
+
+        background-color: #ffffff;
+        border-bottom: 1px ridge #f8f8f8;
+      }
+
+      .non-fixed
+      {
+        display: block;
+        width: calc(100% - 10px);
+        height: 30px;
+        margin: 0;
+        padding: 5px;
+        border-bottom: 1px ridge;
+      }
+
+      .drag-region
+      {
+        flex-grow: 1;
+        -webkit-app-region: drag;
+      }
+
+      .container
+      {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .item
+      {
+        /* no flex */
+      }
+
+      .item-left
+      {
+        text-align: left;
+      }
+
+      .item-right
+      {
+        text-align: right;
+      }
+
+      </style>
+    </custom-style>
+
+    <!-- for the document display flow -->
+    <div class="non-fixed"></div>
+
+    <div class="fixed">
+      <div class="container">
+        <div class="item item-left">
+
+          <rough-line-icon
+            id="close-icon"
+            roughness="[[roughness]]" hover-color="#d32f2f"
+            lines='[ { "x1": 5, "y1": 5, "x2": 25, "y2": 25 }, { "x1": 5, "y1": 25, "x2": 25, "y2": 5 } ]'
+          ></rough-line-icon>
+
+          <rough-line-icon
+            id="minimize-icon"
+            roughness="[[roughness]]" hover-color="#ffa000"
+            lines='[ { "x1": 5, "y1": 25, "x2": 25, "y2": 25 } ]'
+          ></rough-line-icon>
+
+        </div>
+        <div class="item drag-region"></div>
+        <div class="item item-right">
+
+          <rough-line-icon
+            id="menu-icon"
+            roughness="[[roughness]]" hover-color="#777777"
+            lines='[ { "x1": 5, "y1": 5, "x2": 25, "y2": 5 }, { "x1": 5, "y1": 15, "x2": 25, "y2": 15 }, { "x1": 5, "y1": 25, "x2": 25, "y2": 25 } ]'
+          ></rough-line-icon>
+
+        </div>
+      </div>
+    </div>
+
+  </template>
+
+  <!-- Loads JavaScript -->
+  <script src="rough-window-frame.js"></script>
+</dom-module>

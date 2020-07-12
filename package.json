@@ -1,0 +1,42 @@
+{
+  "name": "Game Of Life Emulator",
+  "version": "1.0.0",
+  "description": "Conway's Game of Life implementation",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "build": {
+    "appId": "de.5R33CH4.gameoflife",
+    "mac": {
+      "category": "public.app-category.games",
+      "icon": "icon@2x"
+    },
+    "win": {
+      "icon": "build/icon"
+    }
+  },
+  "repository": "https://github.com/5R33CH4/",
+  "keywords": [
+    "translation",
+    "polymer",
+    "electron"
+  ],
+  "author": "5R33CH4",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^2.0.1",
+    "electron-builder": "^20.8.1"
+  },
+  "dependencies": {
+    "electron-localshortcut": "^3.1.0",
+    "ipc": "0.0.1",
+    "ndarray": "^1.0.18",
+    "npm": "^6.1.0",
+    "path": "^0.12.7",
+    "roughjs": "^2.1.3",
+    "zeros": "^1.0.0"
+  }
+}
