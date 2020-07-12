@@ -27,7 +27,7 @@
   "author": "5R33CH4",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^2.0.1",
+    "electron": "^9.1.0",
     "electron-builder": "^20.8.1"
   },
   "dependencies": {
