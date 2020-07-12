@@ -47,7 +47,7 @@ npm run-script dist
   <tr>
     <td>Windows</td>
     <td>1.0.0</td>
-    <td><a href="https://github.com/5R33CH4/Game-Of-Life-Emulator/releases/download/v1.0.0/Game-Of-Life-Emulator--Setup.exe">Download</a></td>
+    <td><a href="https://github.com/5R33CH4/Game-Of-Life-Emulator/releases/download/v1.0.0/Game-Of-Life-Emulator-Setup.exe">Download</a></td>
   </tr>
 </table>
 
